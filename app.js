@@ -374,3 +374,35 @@ function updatePrice(what, amount) {
 
 //TODO Update Car Price: Enable the user to update the price of an existing car.
 //* Display All Cars: Write a function to display all cars in the inventory.
+
+
+console.log("***************");
+console.log("Pet Names with Details");
+//! Pet Names with Details
+//TODO Create a program that manages a list of pet names, where each pet has a name, type (e.g., dog, cat), and age.
+
+let pets = [
+    {
+        petName: "Pomegranate",
+        petType: "Dog",
+        petAge: 11
+    }
+];
+
+displayPets();
+let Jeff = { petName: "Jeff", petType: "Dog", petAge: 16 };
+addPet(Jeff);
+displayPets();
+
+function addPet(pet) {
+    pets.push(pet);
+    return pets;
+};
+
+function displayPets() {
+    console.log(pets);
+};
+
+//TODOEach object should contain name, type, and age.
+//TODO  Add a New Pet: Allow the user to input a new pet's name, type, and age, then add it to the list.
+//* Display All Pet Names: Write a function to display all pets with their details.
