@@ -286,10 +286,12 @@ let recipes = [
     { title: "Salad", ingredients: ["Lettuce", "Tomatoes", "Cucumbers"], instructions: "Chop and toss with dressing." }
 ];
 
-let newThing = {title: "Burger", ingredients: ["Hamburger", "Bun"], instructions: "Form hamburger into patties, grill, and place on bun."};
+let newThing = { title: "Burger", ingredients: ["Hamburger", "Bun"], instructions: "Form hamburger into patties, grill, and place on bun." };
 
 displayRecipes();
 addRecipe(newThing);
+displayRecipes();
+updateInstructions('Burger', "Form hamburger into patties, grill, and place on bun. Add toppings of your choice.");
 displayRecipes();
 
 //TODO Add a New Recipe: Allow the user to input a new recipe's title, ingredients, and instructions, then add it to the list.
@@ -298,14 +300,29 @@ function addRecipe(newRecipe) {
     return recipes;
 };
 
-function displayRecipes(){
+function displayRecipes() {
     console.log(recipes);
-}
+};
 
+function updateInstructions(what, directions) {
+    let haveRecipe = false;
+    for (i = 0; i < recipes.length; i++) {
+        if (what == recipes[i].title) {
+            recipes[i].instructions = directions;
+            console.log(recipes[i]);
+            haveRecipe = true;
+        }
+    }
+    if (haveRecipe == false) {
+        console.log(what + " is not a recipe we have.")
+    }
+
+};
 //TODO Update Recipe Instructions: Enable the user to update the instructions of an existing recipe.
-
 //* Display All Recipes: Write a function to display all recipes with their details.
 
+console.log("***************");
+console.log("Car Dealership Inventory");
 
 //! Car Dealership Inventory
 //? Create a program to manage a car dealership inventory, where some cars are predefined, and the user can add or update car details.
@@ -313,7 +330,47 @@ let cars = [
     { make: "Toyota", model: "Camry", year: 2020, price: 24000 },
     { make: "Honda", model: "Civic", year: 2019, price: 22000 }
 ];
+let car = { make: "Jeep", model: "Wrangler", year: 2021, price: 31000 }
+displayCars();
+addCar(car);
+displayCars();
+updatePrice('Jeep', 32000);
+displayCars();
+fancyDisplayCars();
+
 //TODO Each car should have properties like make, model, year, and price.
+
+function addCar(car) {
+    cars.push(car);
+    return cars;
+};
+function displayCars() {
+    console.log(cars)
+};
+
+function fancyDisplayCars() {
+    for (i = 0; i < cars.length; i++) {
+        console.log(`${cars[i].year} ${cars[i].make} ${cars[i].model}`);
+        console.log(`Available for ${cars[i].price}`);
+        console.log(" ");
+    }
+}
+
 //TODO Add a New Car: Allow the user to input a new car's make, model, year, and price, then add it to the inventory.
+
+function updatePrice(what, amount) {
+    let haveCar = false;
+    for (i = 0; i < cars.length; i++) {
+        if (what == cars[i].make) {
+            cars[i].price = amount;
+            console.log(cars[i]);
+            haveCar = true;
+        }
+    }
+    if (haveCar == false) {
+        console.log(what + " is not a car we have.")
+    }
+};
+
 //TODO Update Car Price: Enable the user to update the price of an existing car.
 //* Display All Cars: Write a function to display all cars in the inventory.
