@@ -42,13 +42,9 @@ let listOfMusic = [
 
 console.log(listOfMusic[0]);
 console.log(listOfMusic[0].title);
-
 console.log(listOfMusic[1]);
-
 let currentObjectLength = Object.keys(listOfMusic[0]).length;
 console.log(`${currentObjectLength} is the number of properties`);
-
-
 
 //! Personal Contact Book
 //? Create a simple contact book where you can add, view, and search for contacts by name.
@@ -152,11 +148,11 @@ function getAverage(input) {
 }
 //TODO Identify Students Below Average: Write a function to find and list students with grades below the class average.
 
-function belowAverage(input){
-    for (i=0;i<input.length;i++){
+function belowAverage(input) {
+    for (i = 0; i < input.length; i++) {
 
-        if (input[i].grade < average){
-            console.log(input[i].name + " needs help."); 
+        if (input[i].grade < average) {
+            console.log(input[i].name + " needs help.");
         }
     }
 };
@@ -187,9 +183,56 @@ let movies = [
     },
 
 ];
+let newMovie = { title: 'The Contender', genre: 'drama', rating: 'R' };
+
+displayMovies();
+addMovie(newMovie);
+displayMovies();
+reviewMovie("The Contender", "10/10");
+reviewMovie("Cool Hand Luke", "Great Film!");
+newMovie = { title: 'Cool Hand Luke', genre: 'drama', rating: 'PG' };
+addMovie(newMovie);
+reviewMovie("Cool Hand Luke", "Great Film!");
+displayMovies();
+displayTitleAndRatingOnly();
+
+function addMovie(film) {
+    movies.push(film);
+    return movies;
+};
+
+function displayMovies() {
+    console.log(movies);
+}
+
+function displayTitleAndRatingOnly() {
+    for (i = 0; i < movies.length; i++) {
+        console.log(movies[i].title + " Rated: " + movies[i].rating);
+    }
+};
+
+function reviewMovie(what, rank) {
+    let haveFilm = false;
+
+    for (i = 0; i < movies.length; i++) {
+
+        if (what == movies[i].title) {
+            movies[i].review = rank;
+            console.log(movies[i]);
+            haveFilm = true;
+        }
+    }
+
+    if (haveFilm == false) {
+        console.log(what + " is not a movie we have.")
+    }
+};
 
 //TODO Create Functions: Create functions to add a movie, rate a movie, and view your entire collection.
 //* Output Results: Use console.log to display the movie collection and ratings.
+
+console.log("***************");
+console.log("Library Book Tracker");
 
 //! Library Book Tracker
 //? Create a program to manage a small library, where you can check which books are available or borrowed, and filter the books by their status.
@@ -201,7 +244,76 @@ let books = [
     { title: "1984", status: "borrowed" },
     { title: "To Kill a Mockingbird", status: "available" },
     { title: "The Catcher in the Rye", status: "borrowed" },
-    { title: "Moby-Dick", status: "available" }
+    { title: "Moby Dick", status: "available" }
 ];
+displayBooks()
+borrowed();
+available()
+
+function displayBooks() {
+    console.log(books);
+}
+
+function borrowed() {
+
+    for (i = 0; i < books.length; i++) {
+        if (books[i].status == "borrowed") {
+            console.log(books[i].title + ' is currently unavailable.');
+        }
+    }
+};
+
+function available() {
+
+    for (i = 0; i < books.length; i++) {
+        if (books[i].status == "available") {
+            console.log(books[i].title + ' is available.');
+        }
+    }
+};
+
 //TODO Filter Available Books: Write a function to list all available books.
 //TODO Filter Borrowed Books: Write a function to list all borrowed books.
+
+console.log("***************");
+console.log("Recipe Organizer");
+//! Recipe Organizer
+//? Create a program to manage recipes, where some recipes are predefined, and the user can add or update recipes.
+
+//TODO  Each recipe should have properties like title, ingredients (an array of strings), and instructions.
+let recipes = [
+    { title: "Pancakes", ingredients: ["Flour", "Eggs", "Milk"], instructions: "Mix and cook on a griddle." },
+    { title: "Salad", ingredients: ["Lettuce", "Tomatoes", "Cucumbers"], instructions: "Chop and toss with dressing." }
+];
+
+let newThing = {title: "Burger", ingredients: ["Hamburger", "Bun"], instructions: "Form hamburger into patties, grill, and place on bun."};
+
+displayRecipes();
+addRecipe(newThing);
+displayRecipes();
+
+//TODO Add a New Recipe: Allow the user to input a new recipe's title, ingredients, and instructions, then add it to the list.
+function addRecipe(newRecipe) {
+    recipes.push(newRecipe);
+    return recipes;
+};
+
+function displayRecipes(){
+    console.log(recipes);
+}
+
+//TODO Update Recipe Instructions: Enable the user to update the instructions of an existing recipe.
+
+//* Display All Recipes: Write a function to display all recipes with their details.
+
+
+//! Car Dealership Inventory
+//? Create a program to manage a car dealership inventory, where some cars are predefined, and the user can add or update car details.
+let cars = [
+    { make: "Toyota", model: "Camry", year: 2020, price: 24000 },
+    { make: "Honda", model: "Civic", year: 2019, price: 22000 }
+];
+//TODO Each car should have properties like make, model, year, and price.
+//TODO Add a New Car: Allow the user to input a new car's make, model, year, and price, then add it to the inventory.
+//TODO Update Car Price: Enable the user to update the price of an existing car.
+//* Display All Cars: Write a function to display all cars in the inventory.
