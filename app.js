@@ -393,6 +393,7 @@ displayPets();
 let Jeff = { petName: "Jeff", petType: "Dog", petAge: 16 };
 addPet(Jeff);
 displayPets();
+fancyDisplayPets()
 
 function addPet(pet) {
     pets.push(pet);
@@ -401,6 +402,13 @@ function addPet(pet) {
 
 function displayPets() {
     console.log(pets);
+};
+
+function fancyDisplayPets() {
+    for (i = 0; i < pets.length; i++) {
+        console.log(`${pets[i].petName} is a ${pets[i].petType} who is ${pets[i].petAge} years old `);
+        console.log(" ");
+    }
 };
 
 //TODOEach object should contain name, type, and age.
