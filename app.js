@@ -76,7 +76,7 @@ let contactList = [
 let newContact = {
     name: 'Buck Tuddrussel',
     phone: '555-5558',
-    email: 'buck@tudrussle.com',
+    email: 'buck@tuddrussel.com',
 };
 
 displayContacts();
@@ -426,3 +426,12 @@ function addThing(thing, list) {
 function displayArray(yourArray) {
     console.log(yourArray);
 };
+
+displayArray(contactList);
+displayArray(students);
+displayArray(movies);
+displayArray(books);
+displayArray(recipes);
+displayArray(cars);
+displayArray(pets);
+
