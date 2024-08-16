@@ -26,7 +26,6 @@ function quoter(){
 }
 */
 
-
 let listOfMusic = [
     {
         title: 'Never Gonna Give You Up',
@@ -46,17 +45,12 @@ console.log(listOfMusic[1]);
 let currentObjectLength = Object.keys(listOfMusic[0]).length;
 console.log(`${currentObjectLength} is the number of properties`);
 
-//! Personal Contact Book
-//? Create a simple contact book where you can add, view, and search for contacts by name.
-
-//TODO Define a Contact Object: Each contact should be represented as an object with properties like name, phone number, and email.
-//TODO Store Contacts in an Array: Use an array to store multiple contact objects.
-//TODO Create Functions: Create functions to add a contact, view all contacts, and search for a contact by name.
-//* Output Results: Use console.log to display the contacts and search results.
-
-
 console.log("***************");
 console.log("Personal Contact Book");
+//! Personal Contact Book
+//? Create a simple contact book where you can add, view, and search for contacts by name.
+//TODO Define a Contact Object: Each contact should be represented as an object with properties like name, phone number, and email.
+//TODO Store Contacts in an Array: Use an array to store multiple contact objects.
 
 let contactList = [
     {
@@ -75,6 +69,9 @@ let contactList = [
         email: 'kurt@vile.com'
     },
 ];
+
+//TODO Create Functions: Create functions to add a contact, view all contacts, and search for a contact by name.
+//* Output Results: Use console.log to display the contacts and search results.
 
 let newContact = {
     name: 'Buck Tuddrussel',
@@ -183,8 +180,10 @@ let movies = [
     },
 
 ];
+
 let newMovie = { title: 'The Contender', genre: 'drama', rating: 'R' };
 
+//* Output Results: Use console.log to display the movie collection and ratings.
 displayMovies();
 addMovie(newMovie);
 displayMovies();
@@ -196,6 +195,7 @@ reviewMovie("Cool Hand Luke", "Great Film!");
 displayMovies();
 displayTitleAndRatingOnly();
 
+//TODO Create Functions: Create functions to add a movie, rate a movie, and view your entire collection.
 function addMovie(film) {
     movies.push(film);
     return movies;
@@ -228,17 +228,12 @@ function reviewMovie(what, rank) {
     }
 };
 
-//TODO Create Functions: Create functions to add a movie, rate a movie, and view your entire collection.
-//* Output Results: Use console.log to display the movie collection and ratings.
-
 console.log("***************");
 console.log("Library Book Tracker");
-
 //! Library Book Tracker
 //? Create a program to manage a small library, where you can check which books are available or borrowed, and filter the books by their status.
-
-
 //TODO Predefine Book Objects: Each book should be an object with properties like title and status (available or borrowed), stored inside an array.
+
 let books = [
     { title: "The Great Gatsby", status: "available" },
     { title: "1984", status: "borrowed" },
@@ -246,6 +241,7 @@ let books = [
     { title: "The Catcher in the Rye", status: "borrowed" },
     { title: "Moby Dick", status: "available" }
 ];
+
 displayBooks()
 borrowed();
 available()
@@ -254,6 +250,7 @@ function displayBooks() {
     console.log(books);
 }
 
+//TODO Filter Borrowed Books: Write a function to list all borrowed books.
 function borrowed() {
 
     for (i = 0; i < books.length; i++) {
@@ -263,6 +260,7 @@ function borrowed() {
     }
 };
 
+//TODO Filter Available Books: Write a function to list all available books.
 function available() {
 
     for (i = 0; i < books.length; i++) {
@@ -271,9 +269,6 @@ function available() {
         }
     }
 };
-
-//TODO Filter Available Books: Write a function to list all available books.
-//TODO Filter Borrowed Books: Write a function to list all borrowed books.
 
 console.log("***************");
 console.log("Recipe Organizer");
@@ -300,10 +295,12 @@ function addRecipe(newRecipe) {
     return recipes;
 };
 
+//* Display All Recipes: Write a function to display all recipes with their details.
 function displayRecipes() {
     console.log(recipes);
 };
 
+//TODO Update Recipe Instructions: Enable the user to update the instructions of an existing recipe.
 function updateInstructions(what, directions) {
     let haveRecipe = false;
     for (i = 0; i < recipes.length; i++) {
@@ -318,14 +315,13 @@ function updateInstructions(what, directions) {
     }
 
 };
-//TODO Update Recipe Instructions: Enable the user to update the instructions of an existing recipe.
-//* Display All Recipes: Write a function to display all recipes with their details.
 
 console.log("***************");
 console.log("Car Dealership Inventory");
 
 //! Car Dealership Inventory
 //? Create a program to manage a car dealership inventory, where some cars are predefined, and the user can add or update car details.
+//TODO Each car should have properties like make, model, year, and price.
 let cars = [
     { make: "Toyota", model: "Camry", year: 2020, price: 24000 },
     { make: "Honda", model: "Civic", year: 2019, price: 22000 }
@@ -338,12 +334,13 @@ updatePrice('Jeep', 32000);
 displayCars();
 fancyDisplayCars();
 
-//TODO Each car should have properties like make, model, year, and price.
-
+//TODO Add a New Car: Allow the user to input a new car's make, model, year, and price, then add it to the inventory.
 function addCar(car) {
     cars.push(car);
     return cars;
 };
+
+//* Display All Cars: Write a function to display all cars in the inventory.
 function displayCars() {
     console.log(cars)
 };
@@ -356,8 +353,7 @@ function fancyDisplayCars() {
     }
 }
 
-//TODO Add a New Car: Allow the user to input a new car's make, model, year, and price, then add it to the inventory.
-
+//TODO Update Car Price: Enable the user to update the price of an existing car.
 function updatePrice(what, amount) {
     let haveCar = false;
     for (i = 0; i < cars.length; i++) {
@@ -372,14 +368,11 @@ function updatePrice(what, amount) {
     }
 };
 
-//TODO Update Car Price: Enable the user to update the price of an existing car.
-//* Display All Cars: Write a function to display all cars in the inventory.
-
-
 console.log("***************");
 console.log("Pet Names with Details");
 //! Pet Names with Details
 //TODO Create a program that manages a list of pet names, where each pet has a name, type (e.g., dog, cat), and age.
+//TODOEach object should contain name, type, and age.
 
 let pets = [
     {
@@ -395,11 +388,13 @@ addPet(Jeff);
 displayPets();
 fancyDisplayPets()
 
+//TODO  Add a New Pet: Allow the user to input a new pet's name, type, and age, then add it to the list.
 function addPet(pet) {
     pets.push(pet);
     return pets;
 };
 
+//* Display All Pet Names: Write a function to display all pets with their details.
 function displayPets() {
     console.log(pets);
 };
@@ -411,6 +406,23 @@ function fancyDisplayPets() {
     }
 };
 
-//TODOEach object should contain name, type, and age.
-//TODO  Add a New Pet: Allow the user to input a new pet's name, type, and age, then add it to the list.
-//* Display All Pet Names: Write a function to display all pets with their details.
+console.log("***************");
+console.log("Not part of any lesson. Just me screwing around with the concepts.");
+let testArray = [];
+
+let testObject = { first: "first thing", second: "second thing" };
+let testObject2 = { first: "first thing 2", second: "second thing 2" }
+
+addThing(testObject, testArray);
+displayArray(testArray);
+addThing(testObject, testArray);
+displayArray(testArray);
+
+function addThing(thing, list) {
+    list.push(thing);
+    return list;
+};
+
+function displayArray(yourArray) {
+    console.log(yourArray);
+};
